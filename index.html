@@ -9,14 +9,15 @@
     <title>Etch-A-Sketch</title>
 </head>
 <body>
-    <form>
-        <label for="Rows">Rows:</label>
-        <input type="number" name="rowsNum" id="rowsField" value="32">
-        <label for="Columns">Columns:</label>
-        <input type="number" name="colsNum" id="colsField" value="32">
-        <input type="button" onclick="generateCanvas()" value="Generate">
-    </form>
-    <div id="canvas">
+    <div id="settings">
+        <input type="button" onclick="toggleSettings()" value="Toggle Settings"></button>
+        <form id="settingsForm">
+            <label for="numOfBoxes">No. of Boxes per side:</label>
+            <input type="number" name="numOfBoxes" id="numOfBoxes" value="32">
+            <input type="button" onclick="generateCanvas()" value="Generate">
+        </form>
+    </div>
+    <div id="container">
         <!-- DOM goes here -->
     </div>
     <script src="./js.js"></script>

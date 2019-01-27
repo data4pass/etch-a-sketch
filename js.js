@@ -1,29 +1,29 @@
-let container = document.querySelector('#canvas');
-let numOfRows;
-let numOfColumns;
+let canvas = document.querySelector('#container');
+let numOfBoxes;
+
+let settingsForm = document.querySelector('#settingsForm');
+settingsForm.style.display = 'none';
 
 function generateCanvas(){
-    if(numOfRows != null){
-        while(container.firstChild){
-            container.removeChild(container.firstChild);
+    if(numOfBoxes != null){
+        while(canvas.firstChild){
+            canvas.removeChild(canvas.firstChild);
         }
     }
-    numOfRows = document.querySelector('#rowsField').value;
-    numOfColumns = document.querySelector('#colsField').value;
-    makeCanvas(numOfRows, numOfColumns);
+    numOfBoxes = document.querySelector('#numOfBoxes').value;
+    makeCanvas(numOfBoxes);
 }
 
-function makeSingleRow(numOfColumns){
+function makeSingleRow(canvasSize, numOfBoxes){
     let row = document.createElement('row');
-    row.style.display = 'block';
-    row.style.margin = '0';
-    container.appendChild(row);
+    canvas.appendChild(row);
 
-    for(a = 0; a < numOfColumns; a++){
+    for(a = 0; a < numOfBoxes; a++){
         let div = document.createElement('div');
         div.classList.toggle('tile');
-        div.style.width = '10px';
-        div.style.height = '10px';
+        div.style.width = `${((canvasSize/numOfBoxes)-2)}px`;
+        div.style.height = `${((canvasSize/numOfBoxes)-2)}px`;
+        console.log(canvasSize/numOfBoxes)
         div.style.backgroundColor = 'white';
         div.style.border = '1px solid orange';
         div.style.display = 'inline-block';
@@ -35,15 +35,27 @@ function makeSingleRow(numOfColumns){
     }
 }
 
-function makeCanvas(numOfRows, numOfColumns){
-    for(b = 0; b < numOfRows; b++){
-        makeSingleRow(numOfColumns);
+function makeCanvas(numOfBoxes){
+    let canvasSize = 640.0; //in px
+    for(b = 0; b < numOfBoxes; b++){
+        makeSingleRow(canvasSize, numOfBoxes); 
     }
 }
+
+// below are non-canvas code blocks
 
 function randomizeColor(){
     let r = Math.floor(Math.random() * (255 - 0 + 1) ) + 0;
     let g = Math.floor(Math.random() * (255 - 0 + 1) ) + 0;
     let b = Math.floor(Math.random() * (255 - 0 + 1) ) + 0;
     return `rgb(${r},${g},${b})`;
+}
+
+function toggleSettings(){
+    if(settingsForm.style.display == 'none'){
+        settingsForm.style.display = 'initial'
+    }
+    else{
+        settingsForm.style.display = 'none';
+    }
 }
