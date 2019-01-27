@@ -23,10 +23,6 @@ function makeSingleRow(canvasSize, numOfBoxes){
         div.classList.toggle('tile');
         div.style.width = `${((canvasSize/numOfBoxes)-2)}px`;
         div.style.height = `${((canvasSize/numOfBoxes)-2)}px`;
-        console.log(canvasSize/numOfBoxes)
-        div.style.backgroundColor = 'white';
-        div.style.border = '1px solid orange';
-        div.style.display = 'inline-block';
         row.appendChild(div);
 
         div.addEventListener('mouseover',function(e){

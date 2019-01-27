@@ -5,6 +5,8 @@
     display: inline-block;
     border: 2px solid black;
 }
-/* #canvas{
-    font-size: 0;
-} */
+.tile{
+    background-color: white;
+    border: 1px solid orange;
+    display: inline-block;
+}
