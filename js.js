@@ -16,7 +16,6 @@ function generateCanvas(){
 
 function makeSingleRow(canvasSize, numOfBoxes){
     let row = document.createElement('row');
-    canvas.appendChild(row);
 
     for(a = 0; a < numOfBoxes; a++){
         let div = document.createElement('div');
@@ -29,6 +28,7 @@ function makeSingleRow(canvasSize, numOfBoxes){
             e.target.style.backgroundColor = randomizeColor();
         });
     }
+    canvas.appendChild(row);
 }
 
 function makeCanvas(numOfBoxes){
@@ -38,7 +38,7 @@ function makeCanvas(numOfBoxes){
     }
 }
 
-// below are non-canvas code blocks
+/* ---------------------------------------------------- */
 
 function randomizeColor(){
     let r = Math.floor(Math.random() * (255 - 0 + 1) ) + 0;
@@ -49,7 +49,7 @@ function randomizeColor(){
 
 function toggleSettings(){
     if(settingsForm.style.display == 'none'){
-        settingsForm.style.display = 'initial'
+        settingsForm.style.display = 'initial';
     }
     else{
         settingsForm.style.display = 'none';
