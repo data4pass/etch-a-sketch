@@ -5,22 +5,20 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="./reset.css">
+    <link rel="stylesheet" href="./custom.css">
     <title>Etch-A-Sketch</title>
 </head>
 <body>
-    <div id="container">
-
-    </div>
-    <script src="./js.js"></script>
-
     <form>
         <label for="Rows">Rows:</label>
-        <input type="number" name="rowsNum" id="rowsField" value="16">
-    </form>
-    <form>
+        <input type="number" name="rowsNum" id="rowsField" value="32">
         <label for="Columns">Columns:</label>
-        <input type="number" name="colsNum" id="colsField" value="16">
-    </form>
+        <input type="number" name="colsNum" id="colsField" value="32">
         <input type="button" onclick="generateCanvas()" value="Generate">
+    </form>
+    <div id="canvas">
+        <!-- DOM goes here -->
+    </div>
+    <script src="./js.js"></script>
 </body>
 </html>

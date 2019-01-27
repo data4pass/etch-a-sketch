@@ -1,4 +1,4 @@
-let container = document.querySelector('#container');
+let container = document.querySelector('#canvas');
 let numOfRows;
 let numOfColumns;
 
@@ -18,15 +18,20 @@ function makeSingleRow(numOfColumns){
     row.style.display = 'block';
     row.style.margin = '0';
     container.appendChild(row);
+    
     for(a = 0; a < numOfColumns; a++){
         let div = document.createElement('div');
         div.classList.toggle('tile');
-        div.style.width = '20px';
-        div.style.height = '20px';
-        div.style.backgroundColor = 'orange';
-        div.style.border = '1px solid black';
+        div.style.width = '10px';
+        div.style.height = '10px';
+        div.style.backgroundColor = 'white';
+        div.style.border = '1px solid orange';
         div.style.display = 'inline-block';
         row.appendChild(div);
+
+        div.addEventListener('mouseover',function(e){
+            e.target.style.backgroundColor = 'black';
+        });
     }
 }
 
@@ -34,4 +39,8 @@ function makeCanvas(numOfRows, numOfColumns){
     for(b = 0; b < numOfRows; b++){
         makeSingleRow(numOfColumns);
     }
+}
+
+function randomizeColor(){
+    e.target.style.backgroundColor = 'black';
 }
