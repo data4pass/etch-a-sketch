@@ -1,5 +1,5 @@
 let canvas = document.querySelector('#container');
-let numOfBoxes;
+let numOfBoxes; //82
 
 let settingsForm = document.querySelector('#settingsForm');
 settingsForm.style.display = 'none';
@@ -32,7 +32,7 @@ function makeSingleRow(canvasSize, numOfBoxes){
 }
 
 function makeCanvas(numOfBoxes){
-    let canvasSize = 640.0; //in px
+    let canvasSize = 644.0; //in px
     for(b = 0; b < numOfBoxes; b++){
         makeSingleRow(canvasSize, numOfBoxes); 
     }
