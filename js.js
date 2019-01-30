@@ -1,16 +1,20 @@
 let canvas = document.querySelector('#container');
-let numOfBoxes; //82
+let numOfBoxes;
+let maxNumOfBoxes = 82;
 
 let settingsForm = document.querySelector('#settingsForm');
 settingsForm.style.display = 'none';
 
 function generateCanvas(){
+    numOfBoxes = document.querySelector('#numOfBoxes').value;
     if(numOfBoxes != null){
         while(canvas.firstChild){
             canvas.removeChild(canvas.firstChild);
         }
     }
-    numOfBoxes = document.querySelector('#numOfBoxes').value;
+    if(numOfBoxes > maxNumOfBoxes){
+        numOfBoxes = maxNumOfBoxes;
+    }
     makeCanvas(numOfBoxes);
 }
 
